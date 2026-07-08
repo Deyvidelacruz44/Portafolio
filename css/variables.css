@@ -87,38 +87,38 @@
    ========================================================================== */
 
 [data-theme="dark"] {
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #12121a;
-  --bg-tertiary: #1a1a28;
-  --bg-elevated: #1e1e2e;
+  --bg-primary: #0A0E27;
+  --bg-secondary: #131A3A;
+  --bg-tertiary: #1B234A;
+  --bg-elevated: #1B234A;
 
-  --text-primary: #e4e4e7;
-  --text-secondary: #a1a1aa;
-  --text-tertiary: #71717a;
-  --text-inverse: #18181b;
+  --text-primary: #FFFFFF;
+  --text-secondary: #AEB9E1;
+  --text-tertiary: #7C89B8;
+  --text-inverse: #0A0E27;
 
-  --accent: #6366f1;
-  --accent-hover: #818cf8;
-  --accent-subtle: rgba(99, 102, 241, 0.15);
-  --accent-secondary: #22d3ee;
-  --accent-secondary-subtle: rgba(34, 211, 238, 0.15);
+  --accent: #22D3EE;
+  --accent-hover: #67E8F9;
+  --accent-subtle: rgba(34, 211, 238, 0.12);
+  --accent-secondary: #0EA5E9;
+  --accent-secondary-subtle: rgba(14, 165, 233, 0.12);
 
-  --gradient-hero: linear-gradient(135deg, #6366f1, #22d3ee);
-  --gradient-text: linear-gradient(135deg, #818cf8, #22d3ee);
+  --gradient-hero: linear-gradient(135deg, #0EA5E9, #22D3EE);
+  --gradient-text: linear-gradient(135deg, #67E8F9, #22D3EE);
   --gradient-card: linear-gradient(145deg, var(--bg-secondary), var(--bg-tertiary));
 
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-color-hover: rgba(255, 255, 255, 0.15);
+  --border-color: rgba(34, 211, 238, 0.15);
+  --border-color-hover: rgba(34, 211, 238, 0.35);
 
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.15);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 40px rgba(34, 211, 238, 0.18);
 
-  --nav-bg: rgba(10, 10, 15, 0.85);
+  --nav-bg: rgba(10, 14, 39, 0.85);
   --nav-blur: blur(12px);
 
-  --code-bg: #1e1e2e;
-  --tag-bg: rgba(99, 102, 241, 0.12);
-  --tag-text: #a5b4fc;
+  --code-bg: #131A3A;
+  --tag-bg: rgba(34, 211, 238, 0.12);
+  --tag-text: #67E8F9;
 
   --success: #34d399;
   --error: #f87171;
@@ -130,38 +130,38 @@
    ========================================================================== */
 
 [data-theme="light"] {
-  --bg-primary: #fafafa;
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #f4f4f5;
-  --bg-elevated: #ffffff;
+  --bg-primary: #F4F7FC;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #E7ECF7;
+  --bg-elevated: #FFFFFF;
 
-  --text-primary: #18181b;
-  --text-secondary: #52525b;
-  --text-tertiary: #a1a1aa;
-  --text-inverse: #fafafa;
+  --text-primary: #0A0E27;
+  --text-secondary: #4C5680;
+  --text-tertiary: #7C89B8;
+  --text-inverse: #FFFFFF;
 
-  --accent: #4f46e5;
-  --accent-hover: #6366f1;
-  --accent-subtle: rgba(79, 70, 229, 0.08);
-  --accent-secondary: #0891b2;
-  --accent-secondary-subtle: rgba(8, 145, 178, 0.08);
+  --accent: #0891B2;
+  --accent-hover: #0EA5E9;
+  --accent-subtle: rgba(8, 145, 178, 0.08);
+  --accent-secondary: #22D3EE;
+  --accent-secondary-subtle: rgba(34, 211, 238, 0.10);
 
-  --gradient-hero: linear-gradient(135deg, #4f46e5, #0891b2);
-  --gradient-text: linear-gradient(135deg, #4f46e5, #0891b2);
+  --gradient-hero: linear-gradient(135deg, #0891B2, #22D3EE);
+  --gradient-text: linear-gradient(135deg, #0891B2, #0EA5E9);
   --gradient-card: linear-gradient(145deg, var(--bg-secondary), var(--bg-tertiary));
 
-  --border-color: rgba(0, 0, 0, 0.08);
-  --border-color-hover: rgba(0, 0, 0, 0.15);
+  --border-color: rgba(8, 145, 178, 0.18);
+  --border-color-hover: rgba(8, 145, 178, 0.32);
 
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
-  --shadow-glow: 0 0 40px rgba(79, 70, 229, 0.1);
+  --shadow-card: 0 4px 24px rgba(10, 14, 39, 0.08);
+  --shadow-glow: 0 0 40px rgba(8, 145, 178, 0.12);
 
-  --nav-bg: rgba(250, 250, 250, 0.85);
+  --nav-bg: rgba(244, 247, 252, 0.85);
   --nav-blur: blur(12px);
 
-  --code-bg: #f4f4f5;
-  --tag-bg: rgba(79, 70, 229, 0.08);
-  --tag-text: #4f46e5;
+  --code-bg: #E7ECF7;
+  --tag-bg: rgba(8, 145, 178, 0.08);
+  --tag-text: #0891B2;
 
   --success: #059669;
   --error: #dc2626;
