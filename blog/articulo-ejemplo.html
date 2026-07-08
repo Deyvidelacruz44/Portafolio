@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo automaticé el soporte de una empresa con IA en 1 semana — DeyviDev</title>
+  <meta name="description" content="Caso práctico: implementación de un chatbot con GPT que redujo las consultas manuales un 80% en solo 7 días.">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cómo automaticé el soporte de una empresa con IA en 1 semana">
+  <meta property="og:description" content="Caso práctico: implementación de un chatbot con GPT que redujo las consultas manuales un 80%.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6408965175568821"
+       crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <style>
+    .article {
+      padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-24);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .article__back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--text-tertiary);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-8);
+      transition: color var(--duration-fast) var(--ease-out);
+    }
+
+    .article__back:hover {
+      color: var(--accent);
+    }
+
+    .article__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-6);
+    }
+
+    .article__category {
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      font-size: var(--text-xs);
+    }
+
+    .article h1 {
+      font-size: var(--text-5xl);
+      font-weight: 800;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+      margin-bottom: var(--space-6);
+    }
+
+    .article__lead {
+      font-size: var(--text-xl);
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-10);
+      border-left: 3px solid var(--accent);
+      padding-left: var(--space-5);
+    }
+
+    .article__cover {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--bg-tertiary);
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      margin-bottom: var(--space-10);
+      border: 1px solid var(--border-color);
+    }
+
+    .article__content h2 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin-top: var(--space-10);
+      margin-bottom: var(--space-4);
+    }
+
+    .article__content h3 {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-3);
+    }
+
+    .article__content p {
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-5);
+    }
+
+    .article__content ul,
+    .article__content ol {
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-5);
+      padding-left: var(--space-6);
+    }
+
+    .article__content ul { list-style: disc; }
+    .article__content ol { list-style: decimal; }
+    .article__content li { margin-bottom: var(--space-2); }
+
+    .article__content code {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      color: var(--accent);
+    }
+
+    .article__content pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      overflow-x: auto;
+      margin-bottom: var(--space-6);
+    }
+
+    .article__content pre code {
+      background: none;
+      padding: 0;
+      color: var(--text-primary);
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+    }
+
+    .article__content blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: var(--space-5);
+      margin: var(--space-6) 0;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .article__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-10);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .article__cta {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      text-align: center;
+      margin-top: var(--space-10);
+    }
+
+    .article__cta h3 {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-3);
+    }
+
+    .article__cta p {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-5);
+    }
+
+    @media (max-width: 768px) {
+      .article { padding-left: var(--space-4); padding-right: var(--space-4); }
+      .article h1 { font-size: var(--text-3xl); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-icon">&lt;/&gt;</span>
+        <span>DeyviDev</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="../index.html#about" class="nav__link">Sobre mí</a>
+        <a href="../index.html#services" class="nav__link">Servicios</a>
+        <a href="../index.html#projects" class="nav__link">Proyectos</a>
+        <a href="../index.html#contact" class="nav__link">Contacto</a>
+        <a href="index.html" class="nav__link active">Blog</a>
+      </div>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav__hamburger" id="navHamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <article class="article container">
+      <a href="index.html" class="article__back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Volver al blog
+      </a>
+
+      <div class="article__meta">
+        <span class="article__category">IA</span>
+        <span>·</span>
+        <span>15 Abril 2026</span>
+        <span>·</span>
+        <span>5 min lectura</span>
+      </div>
+
+      <h1>Cómo automaticé el soporte de una empresa con IA en 1 semana</h1>
+
+      <p class="article__lead">
+        Un caso práctico real: cómo implementé un chatbot con GPT que redujo las
+        consultas manuales de soporte un 80% y mejoró la satisfacción del cliente
+        en solo 7 días.
+      </p>
+
+      <div class="article__cover">🤖</div>
+
+      <div class="article__content">
+        <h2>El problema</h2>
+        <p>
+          Una empresa de e-commerce recibía más de 200 consultas diarias por email y WhatsApp.
+          Su equipo de soporte de 4 personas no daba abasto, los tiempos de respuesta superaban
+          las 24 horas y la satisfacción del cliente estaba en caída libre.
+        </p>
+        <p>
+          Necesitaban una solución que pudiera manejar las consultas frecuentes automáticamente,
+          sin perder la calidad de la atención personalizada.
+        </p>
+
+        <h2>La solución</h2>
+        <p>
+          Diseñé e implementé un chatbot inteligente basado en GPT-4 que podía:
+        </p>
+        <ul>
+          <li>Responder preguntas frecuentes sobre productos, envíos y devoluciones</li>
+          <li>Buscar información en la base de datos de pedidos en tiempo real</li>
+          <li>Escalar automáticamente a un agente humano cuando detectaba frustración</li>
+          <li>Aprender de cada interacción para mejorar sus respuestas</li>
+        </ul>
+
+        <h2>Stack técnico</h2>
+        <p>El stack que utilicé fue:</p>
+        <ul>
+          <li><code>Python</code> + <code>FastAPI</code> para el backend</li>
+          <li><code>LangChain</code> para la orquestación del modelo de IA</li>
+          <li><code>OpenAI GPT-4</code> como modelo base</li>
+          <li><code>PostgreSQL</code> + <code>pgvector</code> para búsqueda semántica</li>
+          <li><code>Redis</code> para cache y gestión de sesiones</li>
+        </ul>
+
+        <h3>Ejemplo de configuración</h3>
+        <pre><code># Configuración del chatbot con LangChain
+from langchain.chat_models import ChatOpenAI
+from langchain.chains import ConversationalRetrievalChain
+
+llm = ChatOpenAI(
+    model="gpt-4",
+    temperature=0.3,
+    max_tokens=500
+)
+
+chain = ConversationalRetrievalChain.from_llm(
+    llm=llm,
+    retriever=vectorstore.as_retriever(),
+    return_source_documents=True
+)</code></pre>
+
+        <h2>Resultados</h2>
+        <p>
+          Después de una semana en producción, los números hablaron por sí solos:
+        </p>
+        <ul>
+          <li><strong>80% menos</strong> consultas manuales</li>
+          <li><strong>Tiempo de respuesta:</strong> de 24h a menos de 30 segundos</li>
+          <li><strong>Satisfacción del cliente:</strong> subió de 3.2 a 4.7/5</li>
+          <li><strong>Ahorro:</strong> ~$3,000 USD/mes en costos de soporte</li>
+        </ul>
+
+        <blockquote>
+          "En una semana pasamos de estar ahogados en tickets a tener un sistema que
+          resuelve el 80% de las consultas solo. Increíble." — María López, CEO
+        </blockquote>
+
+        <h2>Lecciones aprendidas</h2>
+        <p>
+          Las claves del éxito de este proyecto fueron:
+        </p>
+        <ol>
+          <li><strong>Empezar con el 20% de preguntas que representan el 80% del volumen.</strong> No intenté automatizar todo desde el día 1.</li>
+          <li><strong>El escalamiento a humanos es crítico.</strong> Un chatbot que no sabe decir "no sé" frustra más que uno que no existe.</li>
+          <li><strong>RAG (Retrieval Augmented Generation) es esencial.</strong> Sin acceso a datos actualizados, el chatbot inventa respuestas.</li>
+          <li><strong>Iterar rápido.</strong> Lancé un MVP en 3 días y lo mejoré basándome en conversaciones reales.</li>
+        </ol>
+
+        <h2>¿Quieres algo similar?</h2>
+        <p>
+          Si tu negocio tiene procesos repetitivos que podrían beneficiarse de la IA,
+          me encantaría conversar contigo. Cada proyecto es diferente, y empiezo siempre
+          con una consulta gratuita para entender tu caso.
+        </p>
+      </div>
+
+      <div class="article__tags">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">OpenAI</span>
+        <span class="stack-tag">LangChain</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">Chatbot</span>
+      </div>
+
+      <div class="article__cta">
+        <h3>¿Tienes un proyecto en mente?</h3>
+        <p>Cuéntame tu idea y encontremos juntos la mejor solución con IA.</p>
+        <a href="../index.html#contact" class="btn btn--primary">Contactar</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__copyright">© 2026 DeyviDev. Todos los derechos reservados.</div>
+      <a href="../index.html" class="footer__back-top">
+        Volver al inicio
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const themeToggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
+      function getTheme() {
+        const s = localStorage.getItem('theme');
+        if (s) return s;
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      function setTheme(t) { html.setAttribute('data-theme', t); localStorage.setItem('theme', t); }
+      setTheme(getTheme());
+      themeToggle.addEventListener('click', () => { setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'); });
+
+      const ham = document.getElementById('navHamburger');
+      const links = document.getElementById('navLinks');
+      ham.addEventListener('click', () => { ham.classList.toggle('active'); links.classList.toggle('open'); });
+
+      window.addEventListener('scroll', () => {
+        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>

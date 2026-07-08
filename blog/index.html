@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — DeyviDev</title>
+  <meta name="description" content="Artículos sobre IA, automatizaciones, desarrollo web y tecnología.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6408965175568821"
+       crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <style>
+    .blog-hero {
+      padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-12);
+      text-align: center;
+    }
+
+    .blog-list {
+      padding-bottom: var(--space-24);
+    }
+
+    .blog-list__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .blog-list__item {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: all var(--duration-normal) var(--ease-out);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-list__item:hover {
+      border-color: var(--border-color-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+      color: var(--text-primary);
+    }
+
+    .blog-list__image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--bg-tertiary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .blog-list__body {
+      padding: var(--space-6);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-list__meta {
+      display: flex;
+      gap: var(--space-3);
+      font-size: var(--text-xs);
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-3);
+    }
+
+    .blog-list__category {
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+    }
+
+    .blog-list__title {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      margin-bottom: var(--space-3);
+      line-height: var(--leading-snug);
+    }
+
+    .blog-list__excerpt {
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+      flex: 1;
+    }
+
+    .blog-list__read {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--accent);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      margin-top: var(--space-4);
+    }
+
+    @media (max-width: 768px) {
+      .blog-list__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-icon">&lt;/&gt;</span>
+        <span>DeyviDev</span>
+      </a>
+
+      <div class="nav__links" id="navLinks">
+        <a href="../index.html#about" class="nav__link">Sobre mí</a>
+        <a href="../index.html#services" class="nav__link">Servicios</a>
+        <a href="../index.html#projects" class="nav__link">Proyectos</a>
+        <a href="../index.html#contact" class="nav__link">Contacto</a>
+        <a href="index.html" class="nav__link active">Blog</a>
+      </div>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav__hamburger" id="navHamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="blog-hero">
+      <div class="container">
+        <span class="section__label">Blog</span>
+        <h1 class="section__title">Artículos sobre <span class="gradient-text">IA y Automatización</span></h1>
+        <p class="section__description">
+          Comparto lo que aprendo, casos prácticos y guías para que tú también puedas
+          aprovechar la inteligencia artificial en tu negocio.
+        </p>
+      </div>
+    </section>
+
+    <section class="blog-list">
+      <div class="container">
+        <div class="blog-list__grid">
+          <!-- Article 1 -->
+          <a href="articulo-ejemplo.html" class="blog-list__item reveal">
+            <div class="blog-list__image">🤖</div>
+            <div class="blog-list__body">
+              <div class="blog-list__meta">
+                <span class="blog-list__category">IA</span>
+                <span>·</span>
+                <span>15 Abril 2026</span>
+                <span>·</span>
+                <span>5 min</span>
+              </div>
+              <h2 class="blog-list__title">Cómo automaticé el soporte de una empresa con IA en 1 semana</h2>
+              <p class="blog-list__excerpt">
+                Un caso práctico de cómo implementé un chatbot con GPT que redujo las consultas
+                manuales un 80% y mejoró la satisfacción del cliente.
+              </p>
+              <span class="blog-list__read">
+                Leer artículo →
+              </span>
+            </div>
+          </a>
+
+          <a href="articulo-2.html" class="blog-list__item reveal">
+            <div class="blog-list__image">⚡</div>
+            <div class="blog-list__body">
+              <div class="blog-list__meta">
+                <span class="blog-list__category">Automatización</span>
+                <span>·</span>
+                <span>8 Abril 2026</span>
+                <span>·</span>
+                <span>7 min</span>
+              </div>
+              <h2 class="blog-list__title">5 automatizaciones con n8n que todo negocio debería tener</h2>
+              <p class="blog-list__excerpt">
+                Desde notificaciones automáticas hasta sincronización de datos entre plataformas.
+                Las 5 automatizaciones esenciales para cualquier negocio.
+              </p>
+              <span class="blog-list__read">
+                Leer artículo →
+              </span>
+            </div>
+          </a>
+
+          <a href="articulo-3.html" class="blog-list__item reveal">
+            <div class="blog-list__image">🧠</div>
+            <div class="blog-list__body">
+              <div class="blog-list__meta">
+                <span class="blog-list__category">Desarrollo</span>
+                <span>·</span>
+                <span>1 Abril 2026</span>
+                <span>·</span>
+                <span>4 min</span>
+              </div>
+              <h2 class="blog-list__title">Por qué todo programador debería aprender sobre agentes de IA</h2>
+              <p class="blog-list__excerpt">
+                Los agentes de IA están cambiando las reglas del juego. Te explico qué son,
+                cómo funcionan y por qué deberías empezar a usarlos hoy.
+              </p>
+              <span class="blog-list__read">
+                Leer artículo →
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__copyright">© 2026 DeyviDev. Todos los derechos reservados.</div>
+      <a href="../index.html" class="footer__back-top">
+        Volver al inicio
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Minimal theme + nav logic for blog pages
+    (function() {
+      const themeToggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
+      function getTheme() {
+        const s = localStorage.getItem('theme');
+        if (s) return s;
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      function setTheme(t) { html.setAttribute('data-theme', t); localStorage.setItem('theme', t); }
+      setTheme(getTheme());
+      themeToggle.addEventListener('click', () => { setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'); });
+
+      const ham = document.getElementById('navHamburger');
+      const links = document.getElementById('navLinks');
+      ham.addEventListener('click', () => { ham.classList.toggle('active'); links.classList.toggle('open'); });
+
+      window.addEventListener('scroll', () => {
+        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+      }, { passive: true });
+
+      // Reveal on scroll
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -80px 0px', threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    })();
+  </script>
+</body>
+</html>

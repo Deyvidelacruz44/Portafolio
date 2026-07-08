@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeyviDev — Programador · IA · Automatizaciones</title>
+  <meta name="description" content="Portafolio profesional de programador especializado en IA y automatizaciones. Desarrollo soluciones inteligentes que ahorran tiempo y escalan tu negocio.">
+  <meta name="author" content="DeyviDev">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DeyviDev — Programador · IA · Automatizaciones">
+  <meta property="og:description" content="Desarrollo soluciones inteligentes con IA y automatizaciones que ahorran tiempo y escalan tu negocio.">
+  <meta property="og:image" content="https://deyvidev.com/assets/images/og-image.png">
+  <meta property="og:url" content="https://deyvidev.com">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DeyviDev — Programador · IA · Automatizaciones">
+  <meta name="twitter:description" content="Desarrollo soluciones inteligentes con IA y automatizaciones que ahorran tiempo y escalan tu negocio.">
+  <link rel="canonical" href="https://deyvidev.com/">
+  <meta name="twitter:image" content="https://deyvidev.com/assets/images/og-image.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Deyvi De La Cruz",
+    "url": "https://deyvidev.com",
+    "image": "https://deyvidev.com/assets/images/og-image.png",
+    "email": "deyvifcruz@gmail.com",
+    "jobTitle": "Programador especializado en IA y Automatizaciones",
+    "description": "Programador especializado en inteligencia artificial y automatizaciones. Desarrollo soluciones inteligentes que ahorran tiempo y escalan tu negocio.",
+    "knowsAbout": ["Inteligencia Artificial", "Automatizaciones", "Python", "JavaScript", "TypeScript", "OpenAI", "LangChain", "n8n", "Node.js", "React"],
+    "sameAs": [
+      "https://github.com/Deyvidelacruz44",
+      "https://www.linkedin.com/in/deyvi-f-de-la-cruz-mejia-458957275/"
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6408965175568821"
+       crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════
+       NAVIGATION
+       ════════════════════════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__logo">
+        <img src="assets/images/logo-deyvidev.png" alt="DeyviDev Logo" class="nav__logo-img" style="height:112px; width:auto; display:inline-block; vertical-align:middle;">
+      </a>
+
+      <div class="nav__links" id="navLinks">
+        <a href="#about" class="nav__link">Nosotros</a>
+        <a href="#services" class="nav__link">Servicios</a>
+        <a href="#projects" class="nav__link">Proyectos</a>
+        <a href="#testimonials" class="nav__link">Testimonios</a>
+        <a href="#blog" class="nav__link">Blog</a>
+        <a href="#contact" class="nav__link">Contacto</a>
+      </div>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <button class="nav__hamburger" id="navHamburger" aria-label="Menú de navegación">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ════════════════════════════════════════════════════════════
+         HERO
+         ════════════════════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <div class="hero__grid"></div>
+        <div class="hero__glow hero__glow--1"></div>
+        <div class="hero__glow hero__glow--2"></div>
+      </div>
+
+      <div class="container hero__content">
+
+        <!-- ── Texto izquierda ── -->
+        <div class="hero__text">
+          <div class="hero__badge">
+            <span class="hero__badge-dot"></span>
+            Disponible para proyectos
+          </div>
+
+          <h1 class="hero__title">
+            Construyo soluciones con
+            <span class="gradient-text">IA y Automatizaciones</span>
+          </h1>
+
+          <p class="hero__subtitle">
+            Programador especializado en inteligencia artificial y automatizaciones.
+            Transformo procesos manuales en sistemas inteligentes que ahorran tiempo
+            y escalan tu negocio.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Ver proyectos
+            </a>
+            <a href="#contact" class="btn btn--secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Hablemos
+            </a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <div class="hero__stat-value">+50</div>
+              <div class="hero__stat-label">Proyectos completados</div>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-value">+30</div>
+              <div class="hero__stat-label">Clientes satisfechos</div>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-value">+3</div>
+              <div class="hero__stat-label">Años de experiencia</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Visual derecha: terminal de código ── -->
+        <div class="hero__visual">
+
+          <!-- Tarjeta métrica flotante -->
+          <div class="hero__metric-card">
+            <div class="hero__metric-icon">✅</div>
+            <div>
+              <div class="hero__metric-value">-80%</div>
+              <div class="hero__metric-label">tiempo manual</div>
+            </div>
+          </div>
+
+          <!-- Terminal de código -->
+          <div class="hero__terminal">
+            <div class="hero__terminal-header">
+              <div class="hero__terminal-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="hero__terminal-title">automation.py</span>
+            </div>
+            <div class="hero__terminal-body">
+<pre><code><span class="c-cmt"># AI Automation Pipeline</span>
+<span class="c-kw">from</span> openai <span class="c-kw">import</span> OpenAI
+<span class="c-kw">import</span> n8n_client
+
+client <span class="c-op">=</span> <span class="c-fn">OpenAI</span>()
+
+<span class="c-kw">def</span> <span class="c-fn">automate_workflow</span>(task):
+    response <span class="c-op">=</span> client.chat.completions.<span class="c-fn">create</span>(
+        model<span class="c-op">=</span><span class="c-str">"gpt-4o"</span>,
+        messages<span class="c-op">=</span>[{<span class="c-str">"role"</span>: <span class="c-str">"user"</span>,
+                   <span class="c-str">"content"</span>: task}]
+    )
+    <span class="c-kw">return</span> response.choices[<span class="c-num">0</span>].message.content
+
+<span class="c-cmt"># ✅ Automatización activa — ahorrando tiempo</span></code></pre>
+            </div>
+          </div>
+
+          <!-- Badges flotantes -->
+          <div class="hero__float hero__float--1">⚡ OpenAI GPT-4o</div>
+          <div class="hero__float hero__float--2">🔄 n8n · Make</div>
+          <div class="hero__float hero__float--3">🤖 LangChain</div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         ABOUT
+         ════════════════════════════════════════════════════════════ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__brand-visual reveal-left">
+            <div class="about__brand-card">
+              <img src="assets/images/logo-deyvidev.png" alt="DeyviDev Logo" style="max-width: 520px; width: 100%; margin: 0 auto 12px; display: block;">
+              <div class="about__brand-tagline">IA · Automatizaciones · Desarrollo</div>
+            </div>
+            <div class="about__metrics">
+              <div class="about__metric">
+                <div class="about__metric-num">+50</div>
+                <div class="about__metric-txt">Proyectos</div>
+              </div>
+              <div class="about__metric">
+                <div class="about__metric-num">+30</div>
+                <div class="about__metric-txt">Clientes</div>
+              </div>
+              <div class="about__metric">
+                <div class="about__metric-num">+3</div>
+                <div class="about__metric-txt">Años activos</div>
+              </div>
+              <div class="about__metric">
+                <div class="about__metric-num">100%</div>
+                <div class="about__metric-txt">Satisfacción</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__text reveal-right">
+            <span class="section__label">Nosotros</span>
+            <h3>Tu proyecto, nuestra <span class="gradient-text">misión</span></h3>
+            <p>
+              En DeyviDev construimos soluciones tecnológicas con IA y automatizaciones.
+              Combinamos expertise técnico con visión de negocio para entregar productos
+              que generan impacto real: menos trabajo manual, más tiempo para crecer.
+            </p>
+            <p>
+              Cada proyecto es único. Por eso diseñamos soluciones a medida que se
+              adaptan a tus necesidades, escalan con tu negocio y entregan resultados
+              medibles desde el primer día. Tu éxito es el nuestro.
+            </p>
+
+            <div class="about__stack">
+              <div class="about__stack-title">Tecnologías que usamos</div>
+              <div class="about__stack-grid">
+                <span class="stack-tag">Python</span>
+                <span class="stack-tag">JavaScript</span>
+                <span class="stack-tag">TypeScript</span>
+                <span class="stack-tag">OpenAI API</span>
+                <span class="stack-tag">LangChain</span>
+                <span class="stack-tag">n8n</span>
+                <span class="stack-tag">Make</span>
+                <span class="stack-tag">Node.js</span>
+                <span class="stack-tag">React</span>
+                <span class="stack-tag">PostgreSQL</span>
+                <span class="stack-tag">Docker</span>
+                <span class="stack-tag">AWS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         SERVICES
+         ════════════════════════════════════════════════════════════ -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Servicios</span>
+          <h2 class="section__title">Lo que hacemos <span class="gradient-text">por tu negocio</span></h2>
+          <p class="section__description">
+            Diseñamos soluciones tecnológicas a medida para automatizar procesos,
+            integrar IA y escalar tu negocio.
+          </p>
+        </div>
+
+        <div class="services__grid reveal-stagger">
+          <!-- Service 1 -->
+          <div class="service-card">
+            <div class="service-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 2 1.5 3 1.5 5h5c0-2 1.5-3 1.5-5a4 4 0 0 0-4-4z"/><path d="M9 18h6"/><path d="M10 22h4"/><line x1="12" y1="2" x2="12" y2="2"/></svg>
+            </div>
+            <h3 class="service-card__title">Automatizaciones con IA</h3>
+            <p class="service-card__description">
+              Diseño flujos de trabajo inteligentes que automatizan tareas repetitivas
+              usando IA. Desde procesamiento de datos hasta toma de decisiones automatizada.
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card">
+            <div class="service-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="service-card__title">Chatbots Inteligentes</h3>
+            <p class="service-card__description">
+              Creo asistentes virtuales con IA que entienden el contexto, responden
+              preguntas y resuelven problemas de tus clientes 24/7.
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <div class="service-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="service-card__title">Desarrollo Web</h3>
+            <p class="service-card__description">
+              Desarrollo aplicaciones web modernas, rápidas y responsive.
+              Desde landing pages hasta plataformas SaaS completas.
+            </p>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card">
+            <div class="service-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3 class="service-card__title">Integraciones API</h3>
+            <p class="service-card__description">
+              Conecto tus herramientas y plataformas favoritas para que trabajen
+              juntas. CRM, pagos, email marketing, bases de datos y más.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         PROCESO
+         ════════════════════════════════════════════════════════════ -->
+    <section class="section section--alt" id="proceso">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Proceso</span>
+          <h2 class="section__title">Cómo trabajamos <span class="gradient-text">juntos</span></h2>
+          <p class="section__description">
+            Un proceso claro y transparente para que sepas exactamente qué esperar en cada etapa.
+          </p>
+        </div>
+
+        <div class="process__steps reveal-stagger">
+          <div class="process__step">
+            <div class="process__step-number">01</div>
+            <div class="process__step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="process__step-title">Descubrimiento</h3>
+            <p class="process__step-desc">Llamada gratuita de 30 minutos para entender tu negocio, tus objetivos y el problema que quieres resolver con tecnología.</p>
+          </div>
+
+          <div class="process__step">
+            <div class="process__step-number">02</div>
+            <div class="process__step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h3 class="process__step-title">Propuesta</h3>
+            <p class="process__step-desc">En 48 horas recibes un plan técnico detallado con alcance, tiempos y presupuesto claro. Sin sorpresas ni costos ocultos.</p>
+          </div>
+
+          <div class="process__step">
+            <div class="process__step-number">03</div>
+            <div class="process__step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="process__step-title">Desarrollo</h3>
+            <p class="process__step-desc">Trabajo por sprints con entregas parciales y actualizaciones constantes. Siempre sabrás en qué etapa estamos y qué viene después.</p>
+          </div>
+
+          <div class="process__step">
+            <div class="process__step-number">04</div>
+            <div class="process__step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="process__step-title">Entrega y Soporte</h3>
+            <p class="process__step-desc">Despliego el proyecto, te hago un traspaso completo y ofrezco soporte post-lanzamiento para que todo funcione perfectamente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         PROJECTS
+         ════════════════════════════════════════════════════════════ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Proyectos</span>
+          <h2 class="section__title">Trabajo que <span class="gradient-text">habla por sí solo</span></h2>
+          <p class="section__description">
+            Una selección de proyectos que demuestran mi experiencia en IA,
+            automatizaciones y desarrollo web.
+          </p>
+        </div>
+
+        <div class="projects__filters reveal" id="projectFilters">
+          <!-- Filters rendered by JS -->
+        </div>
+
+        <div class="projects__grid" id="projectsGrid">
+          <!-- Projects rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         TESTIMONIALS
+         ════════════════════════════════════════════════════════════ -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Testimonios</span>
+          <h2 class="section__title">Lo que dicen <span class="gradient-text">mis clientes</span></h2>
+          <p class="section__description">
+            La satisfacción de mis clientes es mi mejor carta de presentación.
+          </p>
+        </div>
+
+        <div class="testimonials__carousel reveal" id="testimonialsCarousel">
+          <div class="testimonials__track" id="testimonialsTrack">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+              <p class="testimonial-card__quote">
+                Nos ayudó a automatizar todo nuestro proceso de atención al cliente con un chatbot
+                increíble. Reducimos el tiempo de respuesta un 80% y nuestros clientes están más
+                satisfechos que nunca.
+              </p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">ML</div>
+                <div class="testimonial-card__info">
+                  <div class="testimonial-card__name">María López</div>
+                  <div class="testimonial-card__role">CEO, TechStart</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <p class="testimonial-card__quote">
+                La automatización que implementó en nuestro pipeline de datos nos ahorra más de
+                20 horas semanales. El ROI se vio en las primeras 2 semanas. Totalmente recomendado.
+              </p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">CR</div>
+                <div class="testimonial-card__info">
+                  <div class="testimonial-card__name">Carlos Rodríguez</div>
+                  <div class="testimonial-card__role">CTO, DataFlow</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+              <p class="testimonial-card__quote">
+                Profesional, rápido y con una visión técnica impresionante. Integró nuestra
+                plataforma con 5 APIs diferentes en tiempo récord. Sin duda volveremos a trabajar juntos.
+              </p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">AG</div>
+                <div class="testimonial-card__info">
+                  <div class="testimonial-card__name">Ana García</div>
+                  <div class="testimonial-card__role">Product Manager, CloudServ</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonials__dots" id="testimonialsDots">
+            <button class="testimonials__dot active" data-index="0" aria-label="Testimonio 1"></button>
+            <button class="testimonials__dot" data-index="1" aria-label="Testimonio 2"></button>
+            <button class="testimonials__dot" data-index="2" aria-label="Testimonio 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         BLOG
+         ════════════════════════════════════════════════════════════ -->
+    <section class="section" id="blog">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Blog</span>
+          <h2 class="section__title">Últimos <span class="gradient-text">artículos</span></h2>
+          <p class="section__description">
+            Comparto lo que aprendo sobre IA, automatizaciones y desarrollo.
+          </p>
+        </div>
+
+        <div class="blog__grid reveal-stagger">
+          <!-- Blog Card 1 -->
+          <a href="blog/articulo-ejemplo.html" class="blog-card">
+            <div class="blog-card__image">🤖</div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">IA</span>
+                <span>·</span>
+                <span>15 Abril 2026</span>
+                <span>·</span>
+                <span>5 min lectura</span>
+              </div>
+              <h3 class="blog-card__title">Cómo automaticé el soporte de una empresa con IA en 1 semana</h3>
+              <p class="blog-card__excerpt">
+                Un caso práctico de cómo implementé un chatbot con GPT que redujo
+                las consultas manuales un 80% y mejoró la satisfacción del cliente.
+              </p>
+              <span class="blog-card__read-more">
+                Leer más
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Blog Card 2 -->
+          <a href="blog/articulo-2.html" class="blog-card">
+            <div class="blog-card__image">⚡</div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Automatización</span>
+                <span>·</span>
+                <span>8 Abril 2026</span>
+                <span>·</span>
+                <span>7 min lectura</span>
+              </div>
+              <h3 class="blog-card__title">5 automatizaciones con n8n que todo negocio debería tener</h3>
+              <p class="blog-card__excerpt">
+                Desde notificaciones automáticas hasta sincronización de datos entre
+                plataformas. Las 5 automatizaciones esenciales para cualquier negocio.
+              </p>
+              <span class="blog-card__read-more">
+                Leer más
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Blog Card 3 -->
+          <a href="blog/articulo-3.html" class="blog-card">
+            <div class="blog-card__image">🧠</div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Desarrollo</span>
+                <span>·</span>
+                <span>1 Abril 2026</span>
+                <span>·</span>
+                <span>4 min lectura</span>
+              </div>
+              <h3 class="blog-card__title">Por qué todo programador debería aprender sobre agentes de IA</h3>
+              <p class="blog-card__excerpt">
+                Los agentes de IA están cambiando las reglas del juego. Te explico
+                qué son, cómo funcionan y por qué deberías empezar a usarlos hoy.
+              </p>
+              <span class="blog-card__read-more">
+                Leer más
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </div>
+          </a>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-10);" class="reveal">
+          <a href="blog/index.html" class="btn btn--secondary">
+            Ver todos los artículos
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         FAQ
+         ════════════════════════════════════════════════════════════ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">FAQ</span>
+          <h2 class="section__title">Preguntas <span class="gradient-text">frecuentes</span></h2>
+          <p class="section__description">
+            Respuestas directas a las dudas más comunes antes de empezar un proyecto.
+          </p>
+        </div>
+
+        <div class="faq__list reveal" id="faqList">
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              ¿Cuánto cuesta un proyecto?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>Depende del alcance y la complejidad. Cada proyecto es diferente, por eso no publico tarifas fijas. Lo que sí garantizo es total transparencia: recibirás un presupuesto detallado antes de comenzar, sin costos ocultos.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              ¿Cuánto tiempo tarda en estar listo mi proyecto?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>Un chatbot sencillo puede estar listo en 1-2 semanas. Una automatización compleja o una aplicación web puede tomar 4-8 semanas. Siempre defino tiempos claros en la propuesta y los cumplo.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              ¿Trabajo con clientes de otros países?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>Sí, trabajo 100% remoto con clientes de toda Latinoamérica, España y Estados Unidos. La comunicación es principalmente por WhatsApp, email y videollamadas. Los pagos se gestionan vía transferencia, Wise o PayPal.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              ¿Necesito saber de tecnología para trabajar contigo?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>Para nada. Me encargo de traducir los conceptos técnicos a lenguaje de negocio. Solo necesitas explicarme qué problema tienes o qué quieres lograr, y yo me encargo del resto.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              ¿Hay garantía en los proyectos?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>Sí. Ofrezco 30 días de soporte post-entrega para corregir cualquier bug o ajuste que surja. Mi objetivo es que el proyecto funcione perfectamente, no solo entregarlo.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              ¿Qué pasa si quiero hacer cambios durante el desarrollo?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>Los cambios menores dentro del alcance acordado están incluidos. Si surgen nuevas funcionalidades, los evaluamos juntos y acordamos cómo proceder antes de seguir adelante.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              ¿Haces mantenimiento después de entregar?
+              <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>Sí, ofrezco planes de mantenimiento mensual para automatizaciones y aplicaciones que requieren actualizaciones continuas. También puedo capacitar a tu equipo para gestionar el sistema de forma independiente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         CONTACT
+         ════════════════════════════════════════════════════════════ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Contacto</span>
+          <h2 class="section__title">¿Tienes un proyecto <span class="gradient-text">en mente?</span></h2>
+          <p class="section__description">
+            Cuéntame tu idea y encontremos juntos la mejor solución.
+          </p>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact__info reveal-left">
+            <h3>Hablemos de tu <span class="gradient-text">próximo proyecto</span></h3>
+            <p>
+              Estoy disponible para proyectos freelance, colaboraciones y consultorías.
+              Respondo en menos de 24 horas.
+            </p>
+
+            <div class="contact__methods">
+              <div class="contact__method">
+                <div class="contact__method-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <div class="contact__method-label">Email</div>
+                  <div class="contact__method-value"><a href="mailto:deyvifcruz@gmail.com">deyvifcruz@gmail.com</a></div>
+                </div>
+              </div>
+
+              <div class="contact__method">
+                <div class="contact__method-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <div class="contact__method-label">Ubicación</div>
+                  <div class="contact__method-value">Remoto — Global 🌍</div>
+                </div>
+              </div>
+
+              <div class="contact__method">
+                <div class="contact__method-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                </div>
+                <div>
+                  <div class="contact__method-label">WhatsApp</div>
+                  <div class="contact__method-value"><a href="https://wa.me/18498853763" target="_blank" rel="noopener noreferrer">+1 (849) 885-3763</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__form-wrapper reveal-right">
+            <form class="contact__form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact">
+              <p class="hidden" style="display:none;">
+                <label>No llenar: <input name="bot-field"></label>
+              </p>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Nombre</label>
+                  <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="project-type">Tipo de proyecto</label>
+                <select id="project-type" name="project-type" required>
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="automatizacion">Automatización con IA</option>
+                  <option value="chatbot">Chatbot Inteligente</option>
+                  <option value="web">Desarrollo Web</option>
+                  <option value="integracion">Integración API</option>
+                  <option value="consultoria">Consultoría</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary" style="width: 100%; justify-content: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Enviar mensaje
+              </button>
+            </form>
+
+            <div class="form-success" id="formSuccess">
+              <div class="form-success__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h4>¡Mensaje enviado!</h4>
+              <p>Gracias por contactarme. Te responderé en menos de 24 horas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo" style="text-align:center; margin-bottom: 12px;">
+        <img src="assets/images/logo-deyvidev.png" alt="DeyviDev Logo" style="height:56px; width:auto; display:inline-block;">
+      </div>
+      <div class="footer__copyright">
+        © 2026 DeyviDev. Todos los derechos reservados.
+      </div>
+
+      <div class="footer__social">
+        <a href="https://github.com/Deyvidelacruz44" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/deyvi-f-de-la-cruz-mejia-458957275/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.instagram.com/deyvidev/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://wa.me/18498853763" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        </a>
+      </div>
+
+      <a href="#hero" class="footer__back-top">
+        Volver arriba
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/18498853763?text=Hola%20Deyvi%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

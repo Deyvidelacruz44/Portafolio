@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 automatizaciones con n8n que todo negocio debería tener — DeyviDev</title>
+  <meta name="description" content="Desde notificaciones automáticas hasta sincronización de datos entre plataformas. Las 5 automatizaciones esenciales con n8n para cualquier negocio.">
+  <meta name="author" content="DeyviDev">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="5 automatizaciones con n8n que todo negocio debería tener">
+  <meta property="og:description" content="Desde notificaciones automáticas hasta sincronización de datos entre plataformas. Las 5 automatizaciones esenciales con n8n para cualquier negocio.">
+  <meta property="og:url" content="https://deyvidev.com/blog/articulo-2.html">
+  <meta property="og:image" content="https://deyvidev.com/assets/images/og-image.png">
+  <link rel="canonical" href="https://deyvidev.com/blog/articulo-2.html">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "5 automatizaciones con n8n que todo negocio debería tener",
+    "description": "Desde notificaciones automáticas hasta sincronización de datos entre plataformas. Las 5 automatizaciones esenciales con n8n para cualquier negocio.",
+    "author": { "@type": "Person", "name": "Deyvi De La Cruz", "url": "https://deyvidev.com" },
+    "publisher": { "@type": "Person", "name": "DeyviDev", "url": "https://deyvidev.com" },
+    "datePublished": "2026-04-08",
+    "url": "https://deyvidev.com/blog/articulo-2.html"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6408965175568821"
+       crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <style>
+    .article-hero {
+      padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-12);
+    }
+
+    .article-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 var(--space-6) var(--space-24);
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      align-items: center;
+      font-size: var(--text-sm);
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-6);
+    }
+
+    .article-meta__category {
+      background: rgba(99, 102, 241, 0.12);
+      color: var(--accent);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+    }
+
+    .article-title {
+      font-size: var(--text-4xl);
+      font-weight: 800;
+      line-height: var(--leading-tight);
+      margin-bottom: var(--space-6);
+      letter-spacing: var(--tracking-tight);
+    }
+
+    .article-lead {
+      font-size: var(--text-xl);
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      border-left: 3px solid var(--accent);
+      padding-left: var(--space-6);
+      margin-bottom: var(--space-10);
+    }
+
+    .article-cover {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      margin-bottom: var(--space-10);
+      border: 1px solid var(--border-color);
+    }
+
+    .article-body h2 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin: var(--space-10) 0 var(--space-4);
+      letter-spacing: var(--tracking-tight);
+    }
+
+    .article-body h3 {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      margin: var(--space-8) 0 var(--space-3);
+      color: var(--accent);
+    }
+
+    .article-body p {
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-5);
+    }
+
+    .article-body ul, .article-body ol {
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-5);
+      padding-left: var(--space-6);
+    }
+
+    .article-body ul { list-style: disc; }
+    .article-body ol { list-style: decimal; }
+
+    .article-body li {
+      margin-bottom: var(--space-2);
+    }
+
+    .article-body strong {
+      color: var(--text-primary);
+    }
+
+    .article-body code {
+      font-family: var(--font-mono);
+      font-size: 0.9em;
+      background: var(--bg-tertiary);
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      color: var(--accent-secondary);
+    }
+
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: var(--space-6);
+      margin: var(--space-8) 0;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .automation-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      margin: var(--space-6) 0;
+    }
+
+    .automation-card__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-3);
+    }
+
+    .automation-card h3 {
+      margin-top: 0 !important;
+      color: var(--text-primary) !important;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin: var(--space-10) 0 var(--space-6);
+    }
+
+    .article-tag {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      padding: var(--space-1) var(--space-3);
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+    }
+
+    .article-cta {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-10);
+      text-align: center;
+      margin-top: var(--space-12);
+    }
+
+    .article-cta h3 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-3);
+    }
+
+    .article-cta p {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-6);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--text-tertiary);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-10);
+      transition: color var(--duration-fast) var(--ease-out);
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .article-title { font-size: var(--text-3xl); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-icon">&lt;/&gt;</span>
+        <span>DeyviDev</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="../index.html#about" class="nav__link">Sobre mí</a>
+        <a href="../index.html#services" class="nav__link">Servicios</a>
+        <a href="../index.html#projects" class="nav__link">Proyectos</a>
+        <a href="../index.html#contact" class="nav__link">Contacto</a>
+        <a href="index.html" class="nav__link active">Blog</a>
+      </div>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav__hamburger" id="navHamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="article-hero">
+      <div class="article-container">
+
+        <a href="index.html" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Volver al blog
+        </a>
+
+        <div class="article-meta">
+          <span class="article-meta__category">Automatización</span>
+          <span>8 Abril 2026</span>
+          <span>·</span>
+          <span>7 min lectura</span>
+          <span>·</span>
+          <span>Por Deyvi De La Cruz</span>
+        </div>
+
+        <h1 class="article-title">5 automatizaciones con n8n que todo negocio debería tener</h1>
+
+        <p class="article-lead">
+          n8n es la herramienta de automatización open-source que está cambiando la forma en que los negocios operan.
+          Aquí te comparto las 5 automatizaciones que implemento en casi todos mis proyectos y que generan
+          un impacto medible desde el primer día.
+        </p>
+
+        <div class="article-cover" role="img" aria-label="Automatizaciones con n8n">⚡</div>
+
+        <div class="article-body">
+
+          <p>
+            Después de implementar docenas de automatizaciones para empresas y negocios pequeños, identifiqué un patrón claro:
+            los mismos tipos de procesos se repiten en casi todos los casos. Son procesos simples que consumen tiempo valioso
+            y que se pueden automatizar completamente en cuestión de horas con n8n.
+          </p>
+
+          <p>
+            n8n es una herramienta de automatización de flujos de trabajo de código abierto que conecta aplicaciones
+            y servicios mediante nodos visuales. A diferencia de Zapier o Make, n8n te permite autoalojar la solución
+            y tiene un modelo de precios mucho más accesible para uso intensivo.
+          </p>
+
+          <h2>¿Por qué n8n sobre otras herramientas?</h2>
+
+          <p>
+            Antes de entrar en las automatizaciones, quiero explicarte por qué recomiendo n8n específicamente:
+          </p>
+
+          <ul>
+            <li><strong>Open source:</strong> Puedes autoalojarlo y no dependes de un proveedor</li>
+            <li><strong>Sin límite de ejecuciones:</strong> En la versión self-hosted no pagas por cada automatización</li>
+            <li><strong>+200 integraciones nativas:</strong> Gmail, Slack, HubSpot, Stripe, PostgreSQL, y muchos más</li>
+            <li><strong>Nodos de código:</strong> Puedes escribir JavaScript o Python cuando necesitas lógica compleja</li>
+            <li><strong>Webhooks nativos:</strong> Recibe datos de cualquier sistema que pueda hacer una llamada HTTP</li>
+          </ul>
+
+          <h2>Las 5 automatizaciones esenciales</h2>
+
+          <div class="automation-card">
+            <div class="automation-card__number">1</div>
+            <h3>Notificación instantánea de nuevos leads</h3>
+            <p>
+              <strong>El problema:</strong> Los formularios de tu web generan leads que se quedan en una base de datos
+              o en el email sin que nadie los atienda a tiempo. Las primeras 5 minutos son cruciales.
+            </p>
+            <p>
+              <strong>La solución:</strong> Un flujo que escucha el webhook de tu formulario (Typeform, Gravity Forms,
+              formulario propio) y en el momento en que llega un nuevo contacto, envía una notificación a Slack o
+              WhatsApp con el nombre, email, y el mensaje del lead — listo para que tu equipo responda de inmediato.
+            </p>
+            <p>
+              <strong>Resultado típico:</strong> Reducción del tiempo de primera respuesta de horas a minutos.
+            </p>
+          </div>
+
+          <div class="automation-card">
+            <div class="automation-card__number">2</div>
+            <h3>Sincronización bidireccional de datos entre plataformas</h3>
+            <p>
+              <strong>El problema:</strong> Tu equipo de ventas usa HubSpot, el de facturación usa otra herramienta,
+              y los datos nunca están sincronizados. Alguien tiene que exportar CSVs manualmente.
+            </p>
+            <p>
+              <strong>La solución:</strong> Un flujo programado que corre cada hora (o en tiempo real vía webhooks)
+              y sincroniza registros entre tu CRM, tu base de datos, y cualquier herramienta que uses. Sin duplicados,
+              sin trabajo manual.
+            </p>
+            <p>
+              <strong>Resultado típico:</strong> Ahorro de 5-10 horas semanales de trabajo de exportación/importación manual.
+            </p>
+          </div>
+
+          <div class="automation-card">
+            <div class="automation-card__number">3</div>
+            <h3>Reportes automáticos diarios/semanales</h3>
+            <p>
+              <strong>El problema:</strong> Alguien del equipo prepara manualmente un reporte de métricas cada semana.
+              Tarda 2-3 horas y siempre llega tarde.
+            </p>
+            <p>
+              <strong>La solución:</strong> Un flujo programado que a las 8am del lunes extrae métricas de Google Analytics,
+              tu base de datos o tu CRM, genera un resumen estructurado y lo envía automáticamente por email o Slack
+              a los destinatarios correctos.
+            </p>
+            <p>
+              <strong>Resultado típico:</strong> Reporte disponible antes de que empiece la semana laboral, sin intervención humana.
+            </p>
+          </div>
+
+          <div class="automation-card">
+            <div class="automation-card__number">4</div>
+            <h3>Procesamiento automático de emails y facturas</h3>
+            <p>
+              <strong>El problema:</strong> Recibes facturas de proveedores por email y alguien tiene que abrirlas,
+              extraer los datos y registrarlos manualmente en tu sistema de contabilidad.
+            </p>
+            <p>
+              <strong>La solución:</strong> Un flujo que monitorea una cuenta de email específica, detecta nuevos adjuntos,
+              extrae los datos usando IA (número de factura, monto, proveedor) y los registra automáticamente en tu sistema.
+              Incluso puede crear una tarea de revisión para el contador.
+            </p>
+            <p>
+              <strong>Resultado típico:</strong> Eliminación total del trabajo de entrada de datos de facturas.
+            </p>
+          </div>
+
+          <div class="automation-card">
+            <div class="automation-card__number">5</div>
+            <h3>Seguimiento automático post-venta</h3>
+            <p>
+              <strong>El problema:</strong> Después de cerrar una venta, el seguimiento al cliente se olvida o
+              depende de que un vendedor recuerde hacerlo manualmente.
+            </p>
+            <p>
+              <strong>La solución:</strong> Un flujo que detecta cuando se cierra un trato en tu CRM y dispara
+              automáticamente una secuencia: email de bienvenida (día 1), recordatorio de configuración (día 3),
+              encuesta de satisfacción (día 7), y oferta de servicios adicionales (día 30).
+            </p>
+            <p>
+              <strong>Resultado típico:</strong> Aumento del 20-30% en retención de clientes y reducción del churn temprano.
+            </p>
+          </div>
+
+          <h2>¿Cómo empezar?</h2>
+
+          <p>
+            Si nunca has usado n8n, el camino más rápido es:
+          </p>
+
+          <ol>
+            <li>Crear una cuenta en <strong>n8n.cloud</strong> (hay un plan gratuito para empezar)</li>
+            <li>Elegir una de las 5 automatizaciones de esta lista que más dolor resuelva en tu negocio</li>
+            <li>Usar las plantillas de la comunidad de n8n como punto de partida</li>
+            <li>Conectar tus cuentas (Gmail, Slack, etc.) usando las credenciales integradas</li>
+            <li>Probar con datos reales antes de activarla en producción</li>
+          </ol>
+
+          <blockquote>
+            La automatización no se trata de eliminar personas, sino de liberar a las personas para que hagan
+            el trabajo que realmente importa.
+          </blockquote>
+
+          <p>
+            Si quieres implementar alguna de estas automatizaciones en tu negocio pero no sabes por dónde empezar,
+            o si tienes un proceso específico que quieres automatizar, puedo ayudarte. Trabajo con empresas y
+            negocios de todos los tamaños para identificar qué procesos automatizar y hacerlo de forma rápida y efectiva.
+          </p>
+
+          <div class="article-tags">
+            <span class="article-tag">n8n</span>
+            <span class="article-tag">Automatización</span>
+            <span class="article-tag">Productividad</span>
+            <span class="article-tag">Workflows</span>
+            <span class="article-tag">No-code</span>
+          </div>
+
+          <div class="article-cta">
+            <h3>¿Quieres automatizar tu negocio?</h3>
+            <p>
+              Cuéntame qué procesos te consumen más tiempo y juntos identificamos cuáles se pueden
+              automatizar de forma rápida y rentable.
+            </p>
+            <a href="https://wa.me/18498853763?text=Hola%20Deyvi%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20n8n%20y%20me%20gustar%C3%ADa%20automatizar%20mi%20negocio"
+               class="btn btn--primary"
+               target="_blank"
+               rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              Hablemos por WhatsApp
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__copyright">© 2026 DeyviDev. Todos los derechos reservados.</div>
+      <a href="../index.html" class="footer__back-top">
+        Volver al inicio
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const themeToggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
+      function getTheme() {
+        const s = localStorage.getItem('theme');
+        if (s) return s;
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      function setTheme(t) { html.setAttribute('data-theme', t); localStorage.setItem('theme', t); }
+      setTheme(getTheme());
+      themeToggle.addEventListener('click', () => {
+        setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+
+      const nav = document.getElementById('nav');
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.getElementById('navHamburger');
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+      }, { passive: true });
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+        document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+      });
+      navLinks.querySelectorAll('.nav__link').forEach(l => {
+        l.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

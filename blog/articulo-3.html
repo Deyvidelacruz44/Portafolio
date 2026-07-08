@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Por qué todo programador debería aprender sobre agentes de IA — DeyviDev</title>
+  <meta name="description" content="Los agentes de IA son la siguiente revolución en el desarrollo de software. Descubre por qué aprender sobre ellos hoy te dará una ventaja competitiva enorme mañana.">
+  <meta name="author" content="DeyviDev">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Por qué todo programador debería aprender sobre agentes de IA">
+  <meta property="og:description" content="Los agentes de IA son la siguiente revolución en el desarrollo de software. Descubre por qué aprender sobre ellos hoy te dará una ventaja competitiva enorme mañana.">
+  <meta property="og:url" content="https://deyvidev.com/blog/articulo-3.html">
+  <meta property="og:image" content="https://deyvidev.com/assets/images/og-image.png">
+  <link rel="canonical" href="https://deyvidev.com/blog/articulo-3.html">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Por qué todo programador debería aprender sobre agentes de IA",
+    "description": "Los agentes de IA son la siguiente revolución en el desarrollo de software. Descubre por qué aprender sobre ellos hoy te dará una ventaja competitiva enorme mañana.",
+    "author": { "@type": "Person", "name": "Deyvi De La Cruz", "url": "https://deyvidev.com" },
+    "publisher": { "@type": "Person", "name": "DeyviDev", "url": "https://deyvidev.com" },
+    "datePublished": "2026-04-01",
+    "url": "https://deyvidev.com/blog/articulo-3.html"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6408965175568821"
+       crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <style>
+    .article-hero {
+      padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-12);
+    }
+
+    .article-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 var(--space-6) var(--space-24);
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      align-items: center;
+      font-size: var(--text-sm);
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-6);
+    }
+
+    .article-meta__category {
+      background: rgba(99, 102, 241, 0.12);
+      color: var(--accent);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+    }
+
+    .article-title {
+      font-size: var(--text-4xl);
+      font-weight: 800;
+      line-height: var(--leading-tight);
+      margin-bottom: var(--space-6);
+      letter-spacing: var(--tracking-tight);
+    }
+
+    .article-lead {
+      font-size: var(--text-xl);
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      border-left: 3px solid var(--accent);
+      padding-left: var(--space-6);
+      margin-bottom: var(--space-10);
+    }
+
+    .article-cover {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      margin-bottom: var(--space-10);
+      border: 1px solid var(--border-color);
+    }
+
+    .article-body h2 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin: var(--space-10) 0 var(--space-4);
+      letter-spacing: var(--tracking-tight);
+    }
+
+    .article-body h3 {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      margin: var(--space-8) 0 var(--space-3);
+      color: var(--accent);
+    }
+
+    .article-body p {
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-5);
+    }
+
+    .article-body ul, .article-body ol {
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-5);
+      padding-left: var(--space-6);
+    }
+
+    .article-body ul { list-style: disc; }
+    .article-body ol { list-style: decimal; }
+
+    .article-body li {
+      margin-bottom: var(--space-2);
+    }
+
+    .article-body strong {
+      color: var(--text-primary);
+    }
+
+    .article-body code {
+      font-family: var(--font-mono);
+      font-size: 0.9em;
+      background: var(--bg-tertiary);
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      color: var(--accent-secondary);
+    }
+
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: var(--space-6);
+      margin: var(--space-8) 0;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .insight-box {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      margin: var(--space-6) 0;
+    }
+
+    .insight-box h3 {
+      margin-top: 0 !important;
+      color: var(--text-primary) !important;
+      font-size: var(--text-base) !important;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin: var(--space-10) 0 var(--space-6);
+    }
+
+    .article-tag {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      padding: var(--space-1) var(--space-3);
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+    }
+
+    .article-cta {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-10);
+      text-align: center;
+      margin-top: var(--space-12);
+    }
+
+    .article-cta h3 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-3);
+    }
+
+    .article-cta p {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-6);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--text-tertiary);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-10);
+      transition: color var(--duration-fast) var(--ease-out);
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .article-title { font-size: var(--text-3xl); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-icon">&lt;/&gt;</span>
+        <span>DeyviDev</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="../index.html#about" class="nav__link">Sobre mí</a>
+        <a href="../index.html#services" class="nav__link">Servicios</a>
+        <a href="../index.html#projects" class="nav__link">Proyectos</a>
+        <a href="../index.html#contact" class="nav__link">Contacto</a>
+        <a href="index.html" class="nav__link active">Blog</a>
+      </div>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav__hamburger" id="navHamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="article-hero">
+      <div class="article-container">
+
+        <a href="index.html" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Volver al blog
+        </a>
+
+        <div class="article-meta">
+          <span class="article-meta__category">Desarrollo</span>
+          <span>1 Abril 2026</span>
+          <span>·</span>
+          <span>4 min lectura</span>
+          <span>·</span>
+          <span>Por Deyvi De La Cruz</span>
+        </div>
+
+        <h1 class="article-title">Por qué todo programador debería aprender sobre agentes de IA</h1>
+
+        <p class="article-lead">
+          Los LLMs son solo el comienzo. Los agentes de IA, sistemas que razonan y actúan de forma autónoma,
+          están redefiniendo lo que significa ser desarrollador. El que aprenda este paradigma hoy tendrá
+          una ventaja enorme en los próximos 3 años.
+        </p>
+
+        <div class="article-cover" role="img" aria-label="Agentes de IA para programadores">🤖</div>
+
+        <div class="article-body">
+
+          <p>
+            Cuando llegó ChatGPT en 2022, muchos programadores pensaron: "bien, una herramienta más para escribir
+            código más rápido". Útil, pero no transformador. Lo que está llegando ahora es diferente en un orden
+            de magnitud: los agentes de IA.
+          </p>
+
+          <p>
+            Un agente de IA no es solo un modelo que responde preguntas. Es un sistema que recibe un objetivo,
+            razona sobre cómo lograrlo, toma decisiones, usa herramientas (buscar en internet, ejecutar código,
+            llamar APIs), y repite el ciclo hasta completar la tarea. Solo.
+          </p>
+
+          <h2>¿Qué hace diferente a un agente?</h2>
+
+          <p>
+            La diferencia entre un LLM y un agente es la misma que entre un consultor que te da consejos
+            y un empleado que ejecuta tareas. Un LLM responde. Un agente actúa.
+          </p>
+
+          <p>
+            Los agentes tienen acceso a:
+          </p>
+
+          <ul>
+            <li><strong>Herramientas:</strong> Funciones que el modelo puede llamar — buscar en Google, leer archivos, ejecutar SQL, enviar emails</li>
+            <li><strong>Memoria:</strong> Pueden recordar el contexto de interacciones anteriores o información de bases de datos vectoriales</li>
+            <li><strong>Razonamiento:</strong> Dividen problemas complejos en subtareas y las resuelven en orden (ReAct, CoT, etc.)</li>
+            <li><strong>Autonomía:</strong> Deciden qué herramienta usar, cuándo, y con qué parámetros — sin intervención humana</li>
+          </ul>
+
+          <h2>¿Por qué importa para programadores?</h2>
+
+          <div class="insight-box">
+            <h3>Dato clave</h3>
+            <p>
+              Según Anthropic y OpenAI, los agentes de IA ya pueden resolver el 40-60% de tareas de programación
+              reales de forma autónoma. En 2-3 años, ese número podría superar el 80%. Esto no elimina a los
+              programadores — cambia radicalmente qué programadores son valiosos.
+            </p>
+          </div>
+
+          <p>
+            Los programadores que entiendan cómo diseñar, orquestar y depurar sistemas de agentes serán
+            los más demandados del mercado. Los que no, verán cómo sus tareas más rutinarias son ejecutadas
+            por agentes supervisados por otros desarrolladores.
+          </p>
+
+          <h3>1. Los agentes son software que necesita arquitectos</h3>
+
+          <p>
+            Crear un agente que funcione bien no es solo llamar a la API de OpenAI. Necesitas:
+            diseñar el grafo de decisiones, definir las herramientas disponibles, gestionar el contexto y
+            la memoria, manejar errores cuando el agente se pierde, y asegurar que no tome acciones destructivas.
+            Eso requiere un programador que entienda el sistema completo.
+          </p>
+
+          <h3>2. Multiplican tu productividad como desarrollador</h3>
+
+          <p>
+            Imagina tener un agente que, dado un issue de GitHub, analiza el código, identifica el bug,
+            propone una solución, escribe los tests, y abre un PR — con tu supervisión. Eso es posible hoy
+            con herramientas como SWE-agent o Devin. El programador que sepa dirigir estos agentes es
+            exponencialmente más productivo que el que los ignora.
+          </p>
+
+          <h3>3. Son el producto del futuro</h3>
+
+          <p>
+            Cada vez más clientes no quieren "una app". Quieren "algo que resuelva mi problema automáticamente".
+            Los agentes de IA son la respuesta a esa demanda. Como programador que construye con agentes,
+            puedes ofrecer soluciones que antes requerían equipos enteros.
+          </p>
+
+          <h2>¿Por dónde empezar?</h2>
+
+          <p>
+            Si quieres entrar en este mundo, te recomiendo este camino:
+          </p>
+
+          <ol>
+            <li>
+              <strong>Aprende los fundamentos:</strong> Entiende cómo funcionan los LLMs, tokens, prompting,
+              y la diferencia entre <code>temperature</code> alta y baja
+            </li>
+            <li>
+              <strong>Experimenta con function calling:</strong> La API de OpenAI y Claude permiten que el
+              modelo llame funciones que tú defines. Empieza aquí
+            </li>
+            <li>
+              <strong>Construye un agente simple:</strong> Un agente que pueda buscar información en internet
+              y resumirla. Langchain o LangGraph son buenos puntos de entrada
+            </li>
+            <li>
+              <strong>Estudia patrones de orquestación:</strong> ReAct (Reasoning + Acting), multi-agent con
+              CrewAI, y Human-in-the-loop con LangGraph
+            </li>
+            <li>
+              <strong>Construye algo real:</strong> El mejor aprendizaje es construir un agente que resuelva
+              un problema real — tuyo o de un cliente
+            </li>
+          </ol>
+
+          <blockquote>
+            No necesitas esperar a que los agentes sean perfectos para aprender a trabajar con ellos.
+            El valor está en entender sus limitaciones hoy para saber cómo diseñar sistemas que las compensen.
+          </blockquote>
+
+          <h2>Lo que yo hago</h2>
+
+          <p>
+            En mis proyectos ya uso agentes de IA para tareas reales: generación de contenido automatizada
+            (VirálTox), asistentes conversacionales (LillyAI y NexolA), y flujos de automatización con
+            decisiones basadas en IA. La curva de aprendizaje es empinada al principio, pero los resultados
+            que puedes entregar a clientes cambian completamente.
+          </p>
+
+          <p>
+            Si estás pensando en añadir IA a tu stack de habilidades o quieres explorar cómo los agentes
+            podrían aplicarse en tu proyecto actual, con gusto hablamos.
+          </p>
+
+          <div class="article-tags">
+            <span class="article-tag">Agentes IA</span>
+            <span class="article-tag">LLMs</span>
+            <span class="article-tag">Desarrollo</span>
+            <span class="article-tag">LangChain</span>
+            <span class="article-tag">Futuro del Trabajo</span>
+          </div>
+
+          <div class="article-cta">
+            <h3>¿Quieres incorporar IA en tu proyecto?</h3>
+            <p>
+              Cuéntame qué estás construyendo y exploramos juntos cómo la IA puede hacer
+              tu producto más poderoso y diferenciado.
+            </p>
+            <a href="https://wa.me/18498853763?text=Hola%20Deyvi%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20agentes%20de%20IA%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20mi%20proyecto"
+               class="btn btn--primary"
+               target="_blank"
+               rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              Hablemos por WhatsApp
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__copyright">© 2026 DeyviDev. Todos los derechos reservados.</div>
+      <a href="../index.html" class="footer__back-top">
+        Volver al inicio
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const themeToggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
+      function getTheme() {
+        const s = localStorage.getItem('theme');
+        if (s) return s;
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      function setTheme(t) { html.setAttribute('data-theme', t); localStorage.setItem('theme', t); }
+      setTheme(getTheme());
+      themeToggle.addEventListener('click', () => {
+        setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+
+      const nav = document.getElementById('nav');
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.getElementById('navHamburger');
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+      }, { passive: true });
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+        document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+      });
+      navLinks.querySelectorAll('.nav__link').forEach(l => {
+        l.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
