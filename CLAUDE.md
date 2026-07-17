@@ -32,3 +32,15 @@ Deployed to Netlify via `netlify.toml`:
 - Security headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`) applied to all routes.
 - Long-lived immutable cache headers for `/css/*`, `/js/*`, `/assets/*` — if you rename/move an existing asset file, add a cache-busting filename change or users may keep the old cached version.
 - A 301 redirect forwards the old `peaceful-kangaroo-292ec3.netlify.app` domain to `deyvidev.com`.
+
+## Proyecto relacionado: Tienda de automatizaciones (`tienda.deyvidev.com`)
+
+Este portafolio es la web principal de la marca **DeyviDev** (`deyvidev.com`). Tiene un **proyecto hermano**: una tienda para vender automatizaciones de n8n empaquetadas, que se integra como **subdominio `tienda.deyvidev.com`** y está enlazada desde el nav de este sitio (el enlace **"Tienda"** en `index.html`, que apunta a ese subdominio).
+
+- **Repo de la tienda:** `../Automatizaciones/deyvidev-store` — Next.js 16 + next-intl + Tailwind v4, app **bilingüe ES/EN**. Stack distinto a este sitio (no es estático).
+- **La tienda ADOPTA el diseño de este portafolio:** replica la paleta y tokens de `css/variables.css` (cian/azul, tema oscuro+claro) y las fuentes Inter + JetBrains Mono, para que pasar de un sitio al otro sea invisible. Si cambias colores/tipografía aquí, refléjalo también en `../Automatizaciones/deyvidev-store/src/app/globals.css`.
+- **Contacto compartido** (fuente de verdad de la tienda en `deyvidev-store/src/content/site.ts`): WhatsApp `+1 849 885 3763`, `deyvifcruz@gmail.com`, GitHub `Deyvidelacruz44`, LinkedIn `deyvi-f-de-la-cruz-mejia-458957275`.
+- **Contexto completo del negocio + arquitectura + estado de la tienda:**
+  - Plan: `C:\Users\User\.claude\plans\revisa-analiza-y-compara-federated-sprout.md`
+  - Memoria: `C:\Users\User\.claude\projects\C--Users-User-Desktop-2026-Automatizaciones\memory\tienda-automatizaciones-n8n.md`
+- **Ojo con el enlace "Tienda":** publica este `index.html` con ese enlace solo cuando `tienda.deyvidev.com` esté desplegado; si no, queda un enlace roto en producción.
