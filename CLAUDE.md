@@ -33,6 +33,8 @@ Deployed to Netlify via `netlify.toml`:
 - Long-lived immutable cache headers for `/css/*`, `/js/*`, `/assets/*` — if you rename/move an existing asset file, add a cache-busting filename change or users may keep the old cached version.
 - A 301 redirect forwards the old `peaceful-kangaroo-292ec3.netlify.app` domain to `deyvidev.com`.
 
+`vercel.json` mirrors the same security/cache headers as a backup deploy target alongside Netlify — keep the two in sync if you change either.
+
 ## Proyecto relacionado: Tienda de automatizaciones (`tienda.deyvidev.com`)
 
 Este portafolio es la web principal de la marca **DeyviDev** (`deyvidev.com`). Tiene un **proyecto hermano**: una tienda para vender automatizaciones de n8n empaquetadas, que se integra como **subdominio `tienda.deyvidev.com`** y está enlazada desde el nav de este sitio (el enlace **"Tienda"** en `index.html`, que apunta a ese subdominio).

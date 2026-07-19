@@ -2,3 +2,6 @@
 .netlify
 
 .vercel
+
+# Config local de Claude Code (launch.json de preview, etc.)
+.claude

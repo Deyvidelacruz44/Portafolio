@@ -8,6 +8,21 @@
   status = 301
   force = true
 
+# Mantener privados los documentos internos: publish = "." sirve la raíz del
+# repo, así que sin esto CLAUDE.md y .claude/ quedarían públicos. force = true
+# hace que el 404 gane sobre el archivo estático.
+[[redirects]]
+  from = "/CLAUDE.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.claude/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
