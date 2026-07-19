@@ -32,6 +32,8 @@ Deployed to Netlify via `netlify.toml`:
 - Security headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`) applied to all routes.
 - Long-lived immutable cache headers for `/css/*`, `/js/*`, `/assets/*` — if you rename/move an existing asset file, add a cache-busting filename change or users may keep the old cached version.
 - A 301 redirect forwards the old `peaceful-kangaroo-292ec3.netlify.app` domain to `deyvidev.com`.
+- `netlify.toml` also 404s `/CLAUDE.md` and `/.claude/*` with forced redirects — because `publish = "."` serves the repo root, these internal docs would otherwise be public. Keep any new internal-only file out of the web root or add a matching redirect.
+- **Deploy is manual via CLI** (`netlify deploy --prod`), not git-connected — so pushing to `master` does *not* auto-deploy; you must run the deploy. The Netlify site is `peaceful-kangaroo-292ec3`; the DNS zone for `deyvidev.com` is managed by Netlify DNS (NS1). Connecting the GitHub repo for auto-deploy is a recommended pending step.
 
 `vercel.json` mirrors the same security/cache headers as a backup deploy target alongside Netlify — keep the two in sync if you change either.
 
@@ -45,4 +47,4 @@ Este portafolio es la web principal de la marca **DeyviDev** (`deyvidev.com`). T
 - **Contexto completo del negocio + arquitectura + estado de la tienda:**
   - Plan: `C:\Users\User\.claude\plans\revisa-analiza-y-compara-federated-sprout.md`
   - Memoria: `C:\Users\User\.claude\projects\C--Users-User-Desktop-2026-Automatizaciones\memory\tienda-automatizaciones-n8n.md`
-- **Ojo con el enlace "Tienda":** publica este `index.html` con ese enlace solo cuando `tienda.deyvidev.com` esté desplegado; si no, queda un enlace roto en producción.
+- **Estado (2026-07-18):** `tienda.deyvidev.com` está **desplegada y en vivo** (Vercel, proyecto `deyvidev-store`, con SSL), y el enlace "Tienda" del nav ya está publicado en producción. El subdominio se conectó con un registro `A tienda.deyvidev.com → 76.76.21.21` en Netlify DNS (mismo patrón que `blog.deyvidev.com`). El portafolio **no** se migró a Vercel a propósito (el formulario de contacto depende de Netlify Forms y el DNS vive en Netlify); ver `C:\Users\User\.claude\projects\C--Users-User-Desktop-2026-Portafolio\memory\hosting-deyvidev-netlify-vercel.md`.
