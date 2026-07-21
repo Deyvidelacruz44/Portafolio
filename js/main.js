@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MAIN.JS — Theme toggle, Navigation, Scroll, Testimonials, Contact Form
+   MAIN.JS — Theme toggle, Navigation, Scroll, Contact Form, FAQ
    ========================================================================== */
 
 (function () {
@@ -94,95 +94,41 @@
   window.addEventListener('scroll', updateActiveLink, { passive: true });
   updateActiveLink();
 
-  // ── Testimonials Carousel ─────────────────────────────────────
-  const track = document.getElementById('testimonialsTrack');
-  const dots = document.querySelectorAll('.testimonials__dot');
-  let currentTestimonial = 0;
-  let autoplayInterval;
-
-  function goToTestimonial(index) {
-    currentTestimonial = index;
-    if (track) {
-      track.style.transform = 'translateX(-' + (index * 100) + '%)';
-    }
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
-    });
-  }
-
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const index = parseInt(dot.getAttribute('data-index'));
-      goToTestimonial(index);
-      resetAutoplay();
-    });
-  });
-
-  function nextTestimonial() {
-    const total = dots.length;
-    goToTestimonial((currentTestimonial + 1) % total);
-  }
-
-  function resetAutoplay() {
-    clearInterval(autoplayInterval);
-    autoplayInterval = setInterval(nextTestimonial, 5000);
-  }
-
-  // Start autoplay
-  if (dots.length > 0) {
-    resetAutoplay();
-  }
-
-  // Touch support for carousel
-  if (track) {
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    track.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    track.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const diff = touchStartX - touchEndX;
-      const total = dots.length;
-
-      if (Math.abs(diff) > 50) {
-        if (diff > 0) {
-          // Swipe left - next
-          goToTestimonial((currentTestimonial + 1) % total);
-        } else {
-          // Swipe right - prev
-          goToTestimonial((currentTestimonial - 1 + total) % total);
-        }
-        resetAutoplay();
-      }
-    }, { passive: true });
-  }
-
   // ── Contact Form ──────────────────────────────────────────────
   const contactForm = document.getElementById('contactForm');
-  const formSuccess = document.getElementById('formSuccess');
+  const formError = document.getElementById('formError');
 
   if (contactForm) {
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const submitLabel = submitBtn ? submitBtn.innerHTML : '';
+
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const formData = new FormData(contactForm);
+      if (formError) formError.classList.remove('visible');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando…';
+      }
 
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        body: new URLSearchParams(new FormData(contactForm)).toString()
       })
-        .then(() => {
-          contactForm.style.display = 'none';
-          formSuccess.classList.add('visible');
+        .then(response => {
+          // Netlify responde 200 al aceptar el envío. Un 404/500 significa que el
+          // formulario no está registrado: eso NO es un envío correcto.
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          window.location.href = '/gracias.html';
         })
         .catch(() => {
-          // Fallback: show success anyway for local dev
-          contactForm.style.display = 'none';
-          formSuccess.classList.add('visible');
+          // El envío falló de verdad. Decirlo y ofrecer WhatsApp para no perder el contacto.
+          if (formError) formError.classList.add('visible');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = submitLabel;
+          }
         });
     });
   }

@@ -44,10 +44,6 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6408965175568821"
-       crossorigin="anonymous"></script>
-
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,7 +71,6 @@
         <a href="#projects" class="nav__link">Proyectos</a>
         <a href="#proceso" class="nav__link">Proceso</a>
         <a href="#about" class="nav__link">Nosotros</a>
-        <a href="#testimonials" class="nav__link">Testimonios</a>
         <a href="#blog" class="nav__link">Blog</a>
         <a href="#contact" class="nav__link">Contacto</a>
       </div>
@@ -417,77 +412,6 @@ client <span class="c-op">=</span> <span class="c-fn">OpenAI</span>()
     </section>
 
     <!-- ════════════════════════════════════════════════════════════
-         TESTIMONIALS
-         ════════════════════════════════════════════════════════════ -->
-    <section class="section" id="testimonials">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__label">Testimonios</span>
-          <h2 class="section__title">Lo que dicen <span class="gradient-text">mis clientes</span></h2>
-          <p class="section__description">
-            La satisfacción de mis clientes es mi mejor carta de presentación.
-          </p>
-        </div>
-
-        <div class="testimonials__carousel reveal" id="testimonialsCarousel">
-          <div class="testimonials__track" id="testimonialsTrack">
-            <!-- Testimonial 1 -->
-            <div class="testimonial-card">
-              <p class="testimonial-card__quote">
-                Nos ayudó a automatizar todo nuestro proceso de atención al cliente con un chatbot
-                increíble. Reducimos el tiempo de respuesta un 80% y nuestros clientes están más
-                satisfechos que nunca.
-              </p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">ML</div>
-                <div class="testimonial-card__info">
-                  <div class="testimonial-card__name">María López</div>
-                  <div class="testimonial-card__role">CEO, TechStart</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial 2 -->
-            <div class="testimonial-card">
-              <p class="testimonial-card__quote">
-                La automatización que implementó en nuestro pipeline de datos nos ahorra más de
-                20 horas semanales. El ROI se vio en las primeras 2 semanas. Totalmente recomendado.
-              </p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">CR</div>
-                <div class="testimonial-card__info">
-                  <div class="testimonial-card__name">Carlos Rodríguez</div>
-                  <div class="testimonial-card__role">CTO, DataFlow</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="testimonial-card">
-              <p class="testimonial-card__quote">
-                Profesional, rápido y con una visión técnica impresionante. Integró nuestra
-                plataforma con 5 APIs diferentes en tiempo récord. Sin duda volveremos a trabajar juntos.
-              </p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">AG</div>
-                <div class="testimonial-card__info">
-                  <div class="testimonial-card__name">Ana García</div>
-                  <div class="testimonial-card__role">Product Manager, CloudServ</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonials__dots" id="testimonialsDots">
-            <button class="testimonials__dot active" data-index="0" aria-label="Testimonio 1"></button>
-            <button class="testimonials__dot" data-index="1" aria-label="Testimonio 2"></button>
-            <button class="testimonials__dot" data-index="2" aria-label="Testimonio 3"></button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════════════════════════════════════════════════════════
          BLOG
          ════════════════════════════════════════════════════════════ -->
     <section class="section" id="blog">
@@ -775,12 +699,15 @@ client <span class="c-op">=</span> <span class="c-fn">OpenAI</span>()
               </button>
             </form>
 
-            <div class="form-success" id="formSuccess">
-              <div class="form-success__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <h4>¡Mensaje enviado!</h4>
-              <p>Gracias por contactarme. Te responderé en menos de 24 horas.</p>
+            <!-- Solo se muestra si el envío falla de verdad. Ofrece WhatsApp como
+                 salida para que el contacto no se pierda. -->
+            <div class="form-error" id="formError" role="alert">
+              <h4>No se pudo enviar el mensaje</h4>
+              <p>
+                Algo falló al enviar el formulario. Escríbeme directamente por
+                <a href="https://wa.me/18498853763?text=Hola%20Deyvi%2C%20intent%C3%A9%20escribirte%20por%20la%20web%20y%20el%20formulario%20fall%C3%B3" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                o a <a href="mailto:deyvifcruz@gmail.com">deyvifcruz@gmail.com</a> y te respondo igual.
+              </p>
             </div>
           </div>
         </div>
