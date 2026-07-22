@@ -652,6 +652,18 @@ client <span class="c-op">=</span> <span class="c-fn">OpenAI</span>()
                 <label>No llenar: <input name="bot-field"></label>
               </p>
 
+              <!-- Atribución de primer toque (Fase 3 CRM): js/attribution.js
+                   rellena estos valores. DEBEN existir en el HTML estático para
+                   que Netlify Forms los capture y los reenvíe al webhook del CRM
+                   (Netlify ignora los campos que no estén en el markup). -->
+              <input type="hidden" name="sid">
+              <input type="hidden" name="landing">
+              <input type="hidden" name="utm_source">
+              <input type="hidden" name="utm_medium">
+              <input type="hidden" name="utm_campaign">
+              <input type="hidden" name="utm_term">
+              <input type="hidden" name="utm_content">
+
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Nombre</label>
@@ -761,6 +773,7 @@ client <span class="c-op">=</span> <span class="c-fn">OpenAI</span>()
 
   <!-- Scripts -->
   <script src="js/projects.js"></script>
+  <script src="js/attribution.js"></script>
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
 </body>
